@@ -60,6 +60,27 @@ def editar_contato(contatos):
 
     return
 
+def deletar_contato(contatos):
+    if len(contatos) == 0:
+        print("Nenhum contato cadastrado!")
+        return
+
+    visualizar_contatos(contatos)
+
+    contato_escolhido = input("Digite o número do contato que deseja EXCLUIR: ")
+
+    try:
+        indice_do_contato = int(contato_escolhido) - 1
+    except ValueError:
+        print("Digite um número válido!")
+        return
+
+    if 0 <= indice_do_contato < len(contatos):
+        contatos.pop(indice_do_contato)
+        print("Contato excluído com sucesso!")
+    else:
+        print("Contato não encontrado!")
+    
 def favoritar_contatos(contatos):
 
     if len(contatos)==0:
@@ -126,6 +147,9 @@ while True:
    
     elif opcao == "5":
         listar_favoritos(contatos)
+
+    elif opcao == "6":
+        deletar_contato(contatos)
 
     elif opcao == "7":
         print("saindo...")

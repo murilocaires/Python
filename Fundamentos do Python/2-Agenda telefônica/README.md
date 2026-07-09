@@ -7,6 +7,7 @@ Este projeto é uma aplicação simples para cadastrar e organizar contatos em P
 - Salvar novos contatos
 - Visualizar todos os contatos cadastrados
 - Editar informações de um contato
+- Deletar contatos cadastrados
 - Favoritar ou desfavoritar contatos
 - Listar apenas os contatos favoritos
 

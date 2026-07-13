@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from models.task import Task
+
 app = Flask(__name__)
 
 tasks = []
@@ -13,7 +14,7 @@ def create_task():
     task_id_control += 1
     tasks.append(new_task)
     print(tasks)
-    return jsonify({"message":"Tarefa cadastrado com sucesso!"}), 201
+    return jsonify({"message":"Tarefa cadastrado com sucesso!", "id":new_task.id}), 201
 
 @app.route("/tasks", methods=["GET"])
 def get_tasks():

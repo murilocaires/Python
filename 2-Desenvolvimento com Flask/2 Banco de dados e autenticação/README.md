@@ -1,21 +1,22 @@
 # Banco de dados e autenticação com Flask
 
-Este projeto é uma API simples em Flask para gerenciar usuários com autenticação básica. Ele foi desenvolvido como exemplo de estudo para praticar operações de CRUD (Criar, Ler, Atualizar e Excluir) em conjunto com login e logout usando Flask-Login e SQLAlchemy.
+Este projeto é uma API simples em Flask para gerenciar usuários com autenticação e autorização básica. Ele foi desenvolvido como exemplo de estudo para praticar operações de CRUD (Criar, Ler, Atualizar e Excluir) em conjunto com login, logout, roles e criptografia de senha usando Flask-Login, SQLAlchemy e bcrypt.
 
 ## Funcionalidades
 
 A aplicação permite:
 - cadastrar um novo usuário;
-- fazer login;
+- fazer login com autenticação segura;
 - fazer logout;
 - listar usuários;
 - consultar um usuário específico;
 - atualizar a senha de um usuário;
-- remover um usuário.
+- remover um usuário, respeitando regras de permissão;
+- utilizar roles como `user` e `admin`.
 
 ## Estrutura do projeto
 
-- app.py: arquivo principal com as rotas, autenticação e execução da aplicação.
+- app.py: arquivo principal com as rotas, autenticação, autorização e execução da aplicação.
 - database.py: configuração do banco de dados SQLAlchemy.
 - models/user.py: modelo do usuário.
 - requirements.txt: dependências do projeto.
@@ -31,7 +32,8 @@ A aplicação permite:
 ```json
 {
   "username": "alice",
-  "password": "123456"
+  "password": "123456",
+  "role": "user"
 }
 ```
 
@@ -57,6 +59,7 @@ A aplicação permite:
 ### Excluir usuário
 - Método: DELETE
 - Rota: /user/<id>
+- Regras: apenas usuários com role `admin` podem remover outros usuários.
 
 ### Fazer login
 - Método: POST
@@ -73,6 +76,12 @@ A aplicação permite:
 ### Fazer logout
 - Método: GET
 - Rota: /logout
+
+## Segurança
+
+- As senhas são armazenadas com hash utilizando bcrypt.
+- A validação de login compara a senha fornecida com o hash salvo no banco.
+- A rota de atualização e exclusão verifica se o usuário autenticado possui permissão para executar a ação.
 
 ## Como executar
 

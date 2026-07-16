@@ -75,3 +75,12 @@ http://127.0.0.1:5000
 
 ## Observação
 Os dados são armazenados em memória durante a execução da aplicação. Ou seja, ao reiniciar o servidor, as tarefas cadastradas serão perdidas.
+
+## Exemplo de uso
+
+### Criar tarefa
+```bash
+curl -X POST http://127.0.0.1:5000/tasks \
+  -H "Content-Type: application/json" \
+  -d '{"title":"Estudar Flask","description":"Revisar rotas"}'
+```

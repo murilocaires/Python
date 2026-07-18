@@ -17,12 +17,13 @@ Projetos incluídos:
 - Jogo de Combate (P.O.O)
 
 ### 2-Desenvolvimento com Flask
-Esta pasta reúne exemplos de desenvolvimento com Flask, incluindo APIs simples para gerenciamento de tarefas e usuários.
+Esta pasta reúne exemplos de desenvolvimento com Flask, incluindo APIs simples para gerenciamento de tarefas, usuários e pagamentos.
 
 | Projeto | Pasta | Descrição |
 |---|---|---|
-| CRUD de atividades | [2-Desenvolvimento com Flask/1 CRUD de atividades](2-Desenvolvimento%20com%20Flask/1%20CRUD%20de%20atividades) | API simples para listar, criar, atualizar e excluir tarefas. |
-| Banco de dados e autenticação | [2-Desenvolvimento com Flask/2 Banco de dados e autenticação](2-Desenvolvimento%20com%20Flask/2%20Banco%20de%20dados%20e%20autenticação) | API com autenticação, roles e criptografia de senhas. |
+| CRUD de atividades | [CRUD de atividades](2-Desenvolvimento%20com%20Flask/1%20CRUD%20de%20atividades) | API simples para listar, criar, atualizar e excluir tarefas. |
+| Banco de dados e autenticação | [Banco de dados e autenticação](2-Desenvolvimento%20com%20Flask/2%20Banco%20de%20dados%20e%20autenticação) | API com autenticação, roles e criptografia de senhas. |
+| API do Pix (comunicação em tempo real) | [API do Pix](2-Desenvolvimento%20com%20Flask/3%20Comunicação%20em%20tempo%20real%20com%20Flask%20%28PIX%29) | Aplicação Flask com geração de cobrança PIX, QR Code e confirmação em tempo real via Socket.IO. |
 
 ## Como utilizar
 1. Acesse o projeto desejado na tabela acima.
@@ -34,7 +35,7 @@ Exemplo:
 
 ```bash
 cd "2-Desenvolvimento com Flask/1 CRUD de atividades"
-pip install -r requirements.txt
+pip install -r requirements.txt --upgrade
 python app.py
 ```
 
